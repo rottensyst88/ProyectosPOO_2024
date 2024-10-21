@@ -17,7 +17,7 @@ public class main {
                 String nombre = sc.next();
                 String[] lista = sc.next().trim().split(",");
 
-                System.out.printf("%s (%d telefonos)\n",nombre,lista.length);
+                System.out.printf("%s (%d teléfonos)\n",nombre,lista.length);
             }
             sc.close();
         } catch (FileNotFoundException e) {
