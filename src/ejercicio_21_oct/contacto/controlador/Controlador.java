@@ -1,15 +1,15 @@
 package ejercicio_21_oct.contacto.controlador;
 
-import ejercicio_21_oct.contacto.modelo.Contacto;
-
+import ejercicio_21_oct.contacto.modelo.*;
 import java.util.ArrayList;
 
 public class Controlador {
-    private static final Controlador instance=new Controlador();
+    private static final Controlador instance=new Controlador(); // SINGLETON
     private Controlador() {
         misContactos=new ArrayList<>();
     }
 
+    // ESTO CORRESPONDE A SINGLETON!
     public static Controlador getInstance(){
         return instance;
     }

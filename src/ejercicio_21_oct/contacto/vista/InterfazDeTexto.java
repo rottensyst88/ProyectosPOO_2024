@@ -1,7 +1,6 @@
 package ejercicio_21_oct.contacto.vista;
 
 import ejercicio_21_oct.contacto.controlador.Controlador;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,7 +11,6 @@ public class InterfazDeTexto {
 
 
     public static void main(String[] args) {
-	    // write your code here
         int op;
         do {
             desplegarMenu();
@@ -65,7 +63,7 @@ public class InterfazDeTexto {
         System.out.println("Ingrese el nombre del contacto a buscar");
         System.out.println("(puede ser una parte del nombre)");
         String nombre=input.next();
-        String[][] contactos=Controlador.getInstance().buscarPorNombre(nombre);
+        String[][] contactos=Controlador.getInstance().buscarPorNombre(nombre); //SIMPLETON
         char[] linea=new char[75];
         Arrays.fill(linea, '_');
         System.out.println(linea);
@@ -126,12 +124,33 @@ public class InterfazDeTexto {
 
     private static void opcion6() {
         System.out.println("*** Eliminar teléfono de un contacto");
-        System.out.println("Opción no implementada, sugerida como ejercicio");
+        System.out.println("Ingrese nombre de contacto? ");
+        String nombreBuscado = input.next();
+        String[][] informacion = Controlador.getInstance().buscarPorNombre(nombreBuscado);
+        System.out.printf("%2s %-50s %-20s %n", "N°", "Nombre", "Teléfono");
+        for (int i = 0; i < informacion.length; i++) {
+            System.out.printf("%2d %-50s %-20s %n", i, informacion[i][0],
+                    informacion[i][1]);
+        }
+        System.out.println("Ingrese numero de telefono a eliminar? ");
+        String telf = input.next();
+
+        if(Controlador.getInstance().eliminarContacto(telf)){
+            System.out.println("Teléfono eliminado");
+        }else{
+            System.out.println("Error al eliminar el Teléfono");
+        }
     }
     private static void opcion7() {
         System.out.println(" ***Eliminar Contacto y todos sus teléfonos");
-        System.out.println("Opción no implementada, sugerida como ejercicio");
+        System.out.println("Ingrese nombre de contacto? ");
+        String nombreBuscado = input.next();
 
+        if(Controlador.getInstance().eliminarContacto(nombreBuscado)){
+            System.out.println("Contacto eliminado");
+        }else{
+            System.out.println("Error al eliminar el contacto");
+        }
     }
 
 
