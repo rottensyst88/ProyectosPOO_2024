@@ -135,7 +135,7 @@ public class InterfazDeTexto {
         System.out.println("Ingrese numero de telefono a eliminar? ");
         String telf = input.next();
 
-        if(Controlador.getInstance().eliminarContacto(telf)){
+        if(Controlador.getInstance().eliminarTelefono(telf)){
             System.out.println("Teléfono eliminado");
         }else{
             System.out.println("Error al eliminar el Teléfono");
