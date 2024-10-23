@@ -1,5 +1,4 @@
 package ejercicio2Excepciones.Vista;
-
 import ejercicio2Excepciones.Controlador.VideoclubController;
 
 import java.util.Scanner;

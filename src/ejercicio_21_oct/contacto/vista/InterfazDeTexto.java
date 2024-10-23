@@ -1,6 +1,6 @@
 package ejercicio_21_oct.contacto.vista;
 
-import ejercicio_21_oct.contacto.controlador.Controlador;
+import ejercicio_21_oct.contacto.controlador.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
