@@ -28,7 +28,7 @@ public class Persona {
     }
 
     public boolean addEMail(String dirEmail) {
-
+        return false;
     }
 
 }
