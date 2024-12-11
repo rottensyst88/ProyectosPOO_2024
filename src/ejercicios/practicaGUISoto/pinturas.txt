@@ -1,0 +1,20 @@
+Impresión: Sol naciente;IMPRESIONISMO;OLEO;1;1872;1
+El estanque de los nenúfares;IMPRESIONISMO;OLEO;1;1899;2
+La noche estrellada;POSTIMPRESIONISMO;OLEO;2;1889;3
+Los girasoles;POSTIMPRESIONISMO;OLEO;2;1888;4
+Las señoritas de Avignon;CUBISMO;OLEO;3;1907;3
+El Guernica;CUBISMO;OLEO;3;1937;5
+La solucion de la memoria;SURREALISMO;OLEO;4;1931
+Sueño causado por el vuelo de una abeja;SURREALISMO;OLEO;4;1944;6
+Las dos Fridas;SURREALISMO;ACUARELA;5;1939;7
+Autorretrato con collar de espinas;SURREALISMO;OLEO;5;1940;8
+La ronda de noche;BARROCO;OLEO;6;1642;9
+Autorretrato con dos círculos;BARROCO;OLEO;6;1665;10
+La última cena;RENACIMIENTO;TEMPLE;7;1498;11
+Mona Lisa;RENACIMIENTO;OLEO;7;1503;12
+Las meninas;BARROCO;OLEO;8;1656;13
+La rendición de Breda;BARROCO;OLEO;8;1635;13
+La joven de la perla;BARROCO;OLEO;9;1665;14
+Vista de Delft;BARROCO;OLEO;9;1660;14
+La montaña Sainte-Victoire;POSTIMPRESIONISMO;OLEO;10;1904;15
+Bodegón con manzanas y naranjas;POSTIMPRESIONISMO;OLEO;10;1899;16
