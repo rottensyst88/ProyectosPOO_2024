@@ -7,7 +7,6 @@
       <excludeFolder url="file://$MODULE_DIR$/src/evaluaciones/Control2_POO-master" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/ArielBobadilla_Control4" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/CalculadoraIMC" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/EjercicioSotoGUI" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/clase_16_sept" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/clase_30_octubre" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/contacto" />
@@ -15,9 +14,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/ejercicio2Excepciones" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/ejercicio3Excepciones" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/ejercicioExcepciones" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/ejercicioTextoPPT-master" />
       <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/ejercicio_gui_soto" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/estudioStreams" />
     </content>
     <content url="file://$MODULE_DIR$/src/ejercicios/SistemaGUI_SOTO_FINAL" />
     <orderEntry type="inheritedJdk" />

@@ -53,7 +53,7 @@ public class GUINuevaPersona extends JDialog {
         }else{
             try{
                 SistemaMatriculas.getInstance().creaPersona(rut,nombre);
-                JOptionPane.showMessageDialog(this,"Persona guardada correctamente!");
+                JOptionPane.showMessageDialog(this,"ejercicios.persistencia.Persona guardada correctamente!");
                 dispose();
             } catch (SistemaMatriculasException e){
                 JOptionPane.showMessageDialog(null, e.getMessage());
@@ -67,7 +67,7 @@ public class GUINuevaPersona extends JDialog {
 
     public static void main(String[] args) {
         GUINuevaPersona dialog = new GUINuevaPersona();
-        dialog.setTitle("Nueva Persona");
+        dialog.setTitle("Nueva ejercicios.persistencia.Persona");
         dialog.pack();
         dialog.setVisible(true);
     }

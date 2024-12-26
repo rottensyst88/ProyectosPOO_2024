@@ -1,3 +1,5 @@
+package ejercicios.persistencia;
+
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 

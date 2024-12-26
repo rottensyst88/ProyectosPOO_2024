@@ -1,4 +1,4 @@
-package ejercicios.EjercicioSotoGUI.src.modelo;
+package ejercicios.gui.soto;
 
 public enum Estilo {
     OLEO,
