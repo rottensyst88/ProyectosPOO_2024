@@ -1,17 +1,23 @@
-package evaluaciones.control5.vista;
+package ejercicios.gui.imc;
 
 import javax.swing.*;
 import java.awt.event.*;
-import evaluaciones.control5.controlador.*;
 
-public class GUINuevaPersona extends JDialog {
+public class CalculadoraIMC extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField rutField;
-    private JTextField nombreField;
+    private JTextField pesoTextField;
+    private JTextField estaturaTextField;
+    private JRadioButton hombreRadioButton;
+    private JRadioButton mujerRadioButton;
+    private JLabel tituloLabel;
+    private JLabel sexoLabel;
+    private JLabel pesoLabel;
+    private JLabel estaturaLabel;
+    private JLabel resultadoLabel;
 
-    public GUINuevaPersona() {
+    public CalculadoraIMC() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -45,20 +51,12 @@ public class GUINuevaPersona extends JDialog {
     }
 
     private void onOK() {
-        String rut = rutField.getText();
-        String nombre = nombreField.getText();
+        double peso = Double.parseDouble(pesoTextField.getText());
+        double estatura = Double.parseDouble(estaturaTextField.getText());
 
-        if(rut.isEmpty() || nombre.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "La rutina no puede estar vacia");
-        }else{
-            try{
-                SistemaMatriculas.getInstance().creaPersona(rut,nombre);
-                JOptionPane.showMessageDialog(this,"ejercicios.persistencia.persona.Persona guardada correctamente!");
-                dispose();
-            } catch (SistemaMatriculasException e){
-                JOptionPane.showMessageDialog(null, e.getMessage());
-            }
-        }
+        Double imc = peso / (estatura * estatura);
+        String imcFormat = String.format("%.2f", imc);
+        resultadoLabel.setText(imcFormat);
     }
 
     private void onCancel() {
@@ -66,9 +64,9 @@ public class GUINuevaPersona extends JDialog {
     }
 
     public static void main(String[] args) {
-        GUINuevaPersona dialog = new GUINuevaPersona();
-        dialog.setTitle("Nueva ejercicios.persistencia.persona.Persona");
+        CalculadoraIMC dialog = new CalculadoraIMC();
         dialog.pack();
         dialog.setVisible(true);
+        System.exit(0);
     }
 }

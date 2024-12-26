@@ -1,17 +1,21 @@
-package evaluaciones.control5.vista;
+package ejercicios.gui.soto_ii.vista;
+
+import controlador.BellasArtesException;
+import controlador.ControladorBellasArtes;
 
 import javax.swing.*;
 import java.awt.event.*;
-import evaluaciones.control5.controlador.*;
 
-public class GUINuevaPersona extends JDialog {
+public class GUINuevoMuseo extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField rutField;
+    private JTextField direccionField;
     private JTextField nombreField;
+    private JTextField idField;
+    private JTextField paisField;
 
-    public GUINuevaPersona() {
+    public GUINuevoMuseo() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -45,18 +49,24 @@ public class GUINuevaPersona extends JDialog {
     }
 
     private void onOK() {
-        String rut = rutField.getText();
+        String id = idField.getText();
         String nombre = nombreField.getText();
+        String pais = paisField.getText();
+        String direccion = direccionField.getText();
 
-        if(rut.isEmpty() || nombre.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "La rutina no puede estar vacia");
-        }else{
-            try{
-                SistemaMatriculas.getInstance().creaPersona(rut,nombre);
-                JOptionPane.showMessageDialog(this,"ejercicios.persistencia.persona.Persona guardada correctamente!");
+        if (id.isEmpty() || nombre.isEmpty() || pais.isEmpty() || direccion.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe agregar los campos");
+        } else {
+            try {
+                int idNum = Integer.parseInt(id);
+                ControladorBellasArtes.getInstancia().creaNuevoMuseo(idNum, nombre, direccion, pais);
+                JOptionPane.showMessageDialog(null, "Museo creado correctamente!");
                 dispose();
-            } catch (SistemaMatriculasException e){
-                JOptionPane.showMessageDialog(null, e.getMessage());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "ID ingresada no es valida!");
+                idField.setText("");
+            } catch (BellasArtesException e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
             }
         }
     }
@@ -66,8 +76,7 @@ public class GUINuevaPersona extends JDialog {
     }
 
     public static void main(String[] args) {
-        GUINuevaPersona dialog = new GUINuevaPersona();
-        dialog.setTitle("Nueva ejercicios.persistencia.persona.Persona");
+        GUINuevoMuseo dialog = new GUINuevoMuseo();
         dialog.pack();
         dialog.setVisible(true);
     }

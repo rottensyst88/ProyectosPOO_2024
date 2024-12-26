@@ -20,9 +20,9 @@ public class Main {
             System.out.println("""
                 -----Menu-----
                 
-                1) Crea ejercicios.persistencia.Persona
+                1) Crea ejercicios.persistencia.persona.Persona
                 2) Crea Formacion
-                3) Matricula ejercicios.persistencia.Persona
+                3) Matricula ejercicios.persistencia.persona.Persona
                 4) Agrega curso a dip.
                 5) Lista personas de formacion
                 6) Lista formaciones de persona.
@@ -53,9 +53,9 @@ public class Main {
         String nombre = scan.next();
 
         if(sistema.creaPersona(rut, nombre)){
-            System.out.println("ejercicios.persistencia.Persona con exito");
+            System.out.println("ejercicios.persistencia.persona.Persona con exito");
         }else{
-            System.out.println("ejercicios.persistencia.Persona Error!");
+            System.out.println("ejercicios.persistencia.persona.Persona Error!");
         }
     }
 

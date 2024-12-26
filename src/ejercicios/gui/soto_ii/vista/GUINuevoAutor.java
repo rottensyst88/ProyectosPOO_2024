@@ -1,20 +1,25 @@
-package evaluaciones.control5.vista;
+package ejercicios.gui.soto_ii.vista;
 
 import javax.swing.*;
 import java.awt.event.*;
-import evaluaciones.control5.controlador.*;
 
-public class GUINuevaPersona extends JDialog {
+public class GUINuevoAutor extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField rutField;
+    private JTextField idField;
     private JTextField nombreField;
+    private JTextField paisField;
+    private JTextField fechNacField;
+    private JTextField textField1;
+    private JButton button1;
+    private JTable table1;
 
-    public GUINuevaPersona() {
+    public GUINuevoAutor() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -45,29 +50,17 @@ public class GUINuevaPersona extends JDialog {
     }
 
     private void onOK() {
-        String rut = rutField.getText();
-        String nombre = nombreField.getText();
-
-        if(rut.isEmpty() || nombre.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "La rutina no puede estar vacia");
-        }else{
-            try{
-                SistemaMatriculas.getInstance().creaPersona(rut,nombre);
-                JOptionPane.showMessageDialog(this,"ejercicios.persistencia.persona.Persona guardada correctamente!");
-                dispose();
-            } catch (SistemaMatriculasException e){
-                JOptionPane.showMessageDialog(null, e.getMessage());
-            }
-        }
+        // add your code here
+        dispose();
     }
 
     private void onCancel() {
+        // add your code here if necessary
         dispose();
     }
 
     public static void main(String[] args) {
-        GUINuevaPersona dialog = new GUINuevaPersona();
-        dialog.setTitle("Nueva ejercicios.persistencia.persona.Persona");
+        GUINuevoAutor dialog = new GUINuevoAutor();
         dialog.pack();
         dialog.setVisible(true);
     }
