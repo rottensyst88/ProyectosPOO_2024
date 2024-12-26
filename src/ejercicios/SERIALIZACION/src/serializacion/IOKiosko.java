@@ -1,4 +1,4 @@
-package serializacion;
+package ejercicios.SERIALIZACION.src.serializacion;
 
 import controlador.ControladorKiosko;
 

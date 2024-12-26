@@ -1,4 +1,4 @@
-package controlador;
+package ejercicios.practicaGUISoto.src.controlador;
 
 import modelo.*;
 import persistencia.IOBellasArtes;

@@ -1,3 +1,5 @@
+package ejercicios.ejemploTabla.src;
+
 import java.util.ArrayList;
 
 public class ControladorDeContactos {

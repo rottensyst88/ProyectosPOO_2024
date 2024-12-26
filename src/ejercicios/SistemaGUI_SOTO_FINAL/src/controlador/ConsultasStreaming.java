@@ -1,4 +1,4 @@
-package controlador;
+package ejercicios.SistemaGUI_SOTO_FINAL.src.controlador;
 
 import modelo.*;
 

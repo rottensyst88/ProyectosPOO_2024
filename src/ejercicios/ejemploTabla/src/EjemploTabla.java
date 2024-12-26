@@ -1,3 +1,5 @@
+package ejercicios.ejemploTabla.src;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;

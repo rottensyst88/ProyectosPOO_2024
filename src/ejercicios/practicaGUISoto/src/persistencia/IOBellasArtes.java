@@ -1,4 +1,4 @@
-package persistencia;
+package ejercicios.practicaGUISoto.src.persistencia;
 import modelo.*;
 
 import java.io.*;

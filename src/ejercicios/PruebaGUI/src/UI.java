@@ -1,3 +1,5 @@
+package ejercicios.PruebaGUI.src;
+
 import javax.swing.*;
 import java.awt.event.*;
 

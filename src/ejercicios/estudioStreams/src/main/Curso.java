@@ -1,4 +1,4 @@
-package main;
+package ejercicios.estudioStreams.src.main;
 
 public class Curso {
 

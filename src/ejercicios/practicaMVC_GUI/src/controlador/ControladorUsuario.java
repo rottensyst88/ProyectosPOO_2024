@@ -1,4 +1,4 @@
-package controlador;
+package ejercicios.practicaMVC_GUI.src.controlador;
 
 import modelo.Usuario;
 

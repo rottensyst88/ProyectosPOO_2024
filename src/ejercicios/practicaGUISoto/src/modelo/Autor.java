@@ -1,4 +1,4 @@
-package modelo;
+package ejercicios.practicaGUISoto.src.modelo;
 
 import java.time.LocalDate;
 import java.util.*;

@@ -1,4 +1,4 @@
-package modelo;
+package ejercicios.practicaGUISoto.src.modelo;
 
 public class Pintura {
     private String titulo;

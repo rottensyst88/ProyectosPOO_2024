@@ -1,4 +1,4 @@
-package excepcion;
+package ejercicios.SERIALIZACION.src.excepcion;
 
 public class KioskoExcp extends RuntimeException {
     public KioskoExcp(String message) {

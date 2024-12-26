@@ -1,3 +1,5 @@
+package ejercicios.ejemploTabla.src;
+
 import java.util.Objects;
 
 public class Contacto {

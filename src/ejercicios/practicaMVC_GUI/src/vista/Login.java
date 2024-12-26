@@ -1,4 +1,4 @@
-package vista;
+package ejercicios.practicaMVC_GUI.src.vista;
 
 import javax.swing.*;
 import java.awt.event.*;

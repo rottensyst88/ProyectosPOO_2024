@@ -1,4 +1,4 @@
-package modelo;
+package ejercicios.SERIALIZACION.src.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;

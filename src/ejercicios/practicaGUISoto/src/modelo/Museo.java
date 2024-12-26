@@ -1,4 +1,4 @@
-package modelo;
+package ejercicios.practicaGUISoto.src.modelo;
 
 import java.util.ArrayList;
 import java.util.List;

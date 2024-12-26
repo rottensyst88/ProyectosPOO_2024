@@ -1,4 +1,4 @@
-package modelo;
+package ejercicios.practicaGUISoto.src.modelo;
 
 public enum Estilo {
     IMPRESIONISMO,

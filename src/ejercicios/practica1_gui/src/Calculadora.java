@@ -1,3 +1,5 @@
+package ejercicios.practica1_gui.src;
+
 import javax.swing.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;

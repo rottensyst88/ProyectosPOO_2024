@@ -1,4 +1,4 @@
-package persistencia;
+package ejercicios.SistemaGUI_SOTO_FINAL.src.persistencia;
 import modelo.*;
 
 import java.io.*;

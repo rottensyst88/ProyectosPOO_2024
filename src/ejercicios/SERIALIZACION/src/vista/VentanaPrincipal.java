@@ -1,4 +1,4 @@
-package vista;
+package ejercicios.SERIALIZACION.src.vista;
 
 import controlador.ControladorKiosko;
 import excepcion.KioskoExcp;

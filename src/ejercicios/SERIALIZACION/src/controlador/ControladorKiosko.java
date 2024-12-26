@@ -1,4 +1,4 @@
-package controlador;
+package ejercicios.SERIALIZACION.src.controlador;
 import excepcion.KioskoExcp;
 import modelo.*;
 import serializacion.IOKiosko;

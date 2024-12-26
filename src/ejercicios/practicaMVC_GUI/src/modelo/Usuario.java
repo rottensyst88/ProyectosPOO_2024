@@ -1,4 +1,4 @@
-package modelo;
+package ejercicios.practicaMVC_GUI.src.modelo;
 
 import java.util.Objects;
 

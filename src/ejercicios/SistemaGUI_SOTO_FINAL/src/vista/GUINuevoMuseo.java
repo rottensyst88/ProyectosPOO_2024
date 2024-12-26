@@ -1,4 +1,4 @@
-package vista;
+package ejercicios.SistemaGUI_SOTO_FINAL.src.vista;
 
 import controlador.BellasArtesException;
 import controlador.ControladorBellasArtes;

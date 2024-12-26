@@ -1,4 +1,4 @@
-package modelo;
+package ejercicios.SistemaGUI_SOTO_FINAL.src.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
