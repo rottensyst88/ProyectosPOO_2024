@@ -1,6 +1,6 @@
 package ejercicios.gui.soto_ii.vista;
 
-import controlador.ControladorBellasArtes;
+import ejercicios.gui.soto_ii.controlador.ControladorBellasArtes;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

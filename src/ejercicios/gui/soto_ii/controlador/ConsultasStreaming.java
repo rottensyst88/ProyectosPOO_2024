@@ -1,6 +1,6 @@
 package ejercicios.gui.soto_ii.controlador;
 
-import modelo.*;
+import ejercicios.gui.soto_ii.modelo.*;
 
 import java.time.format.DateTimeFormatter;
 import java.util.*;

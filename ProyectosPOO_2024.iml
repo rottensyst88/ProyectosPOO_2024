@@ -5,11 +5,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/src/evaluaciones/Control2_POO-master" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/gui/bellas_artes" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/gui/calculadora" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/gui/login" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/gui/soto" />
-      <excludeFolder url="file://$MODULE_DIR$/src/ejercicios/gui/soto_ii" />
     </content>
     <content url="file://$MODULE_DIR$/src/ejercicios/SistemaGUI_SOTO_FINAL" />
     <orderEntry type="inheritedJdk" />

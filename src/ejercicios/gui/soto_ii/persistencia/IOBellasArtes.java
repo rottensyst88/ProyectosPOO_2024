@@ -1,5 +1,5 @@
 package ejercicios.gui.soto_ii.persistencia;
-import modelo.*;
+import ejercicios.gui.soto_ii.modelo.*;
 
 import java.io.*;
 import java.time.format.DateTimeFormatter;

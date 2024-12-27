@@ -6,6 +6,7 @@
       <xy x="48" y="54" width="769" height="367"/>
     </constraints>
     <properties>
+      <enabled value="true"/>
       <foreground color="-4475238"/>
     </properties>
     <border type="none"/>
@@ -36,7 +37,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="resources/Custom-Icon-Design-Pretty-Office-8-Accept.48.png"/>
+                  <icon value="ejercicios/gui/login/resources/Custom-Icon-Design-Pretty-Office-8-Accept.48.png"/>
                   <text value="OK"/>
                 </properties>
               </component>
@@ -45,7 +46,7 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="resources/9004715_cross_delete_remove_cancel_icon.png"/>
+                  <icon value="ejercicios/gui/login/resources/9004715_cross_delete_remove_cancel_icon.png"/>
                   <text value="Cancel"/>
                 </properties>
               </component>
@@ -69,7 +70,7 @@
               <font name="JetBrains Mono" size="16" style="1"/>
               <horizontalAlignment value="2"/>
               <horizontalTextPosition value="4"/>
-              <icon value="resources/icons8-información-del-sistema-48.png"/>
+              <icon value="ejercicios/gui/login/resources/icons8-información-del-sistema-48.png"/>
               <text value="Bienvenido al Sistema"/>
             </properties>
           </component>
@@ -83,7 +84,7 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <icon value="resources/Custom-Icon-Design-Pretty-Office-8-Users.48.png"/>
+              <icon value="ejercicios/gui/login/resources/Custom-Icon-Design-Pretty-Office-8-Users.48.png"/>
               <text value="Usuario"/>
             </properties>
           </component>
@@ -92,7 +93,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <icon value="resources/Paomedia-Small-N-Flat-Key.48.png"/>
+              <icon value="ejercicios/gui/login/resources/Paomedia-Small-N-Flat-Key.48.png"/>
               <text value="Contraseña"/>
             </properties>
           </component>

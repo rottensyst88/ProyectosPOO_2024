@@ -1,7 +1,7 @@
 package ejercicios.gui.soto_ii.vista;
 
-import controlador.BellasArtesException;
-import controlador.ControladorBellasArtes;
+import ejercicios.gui.soto_ii.controlador.BellasArtesException;
+import ejercicios.gui.soto_ii.controlador.ControladorBellasArtes;
 
 import javax.swing.*;
 import java.awt.event.*;

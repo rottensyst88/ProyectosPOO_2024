@@ -1,7 +1,7 @@
 package ejercicios.gui.soto_ii.controlador;
 
-import modelo.*;
-import persistencia.IOBellasArtes;
+import ejercicios.gui.soto_ii.modelo.*;
+import ejercicios.gui.soto_ii.persistencia.IOBellasArtes;
 
 import java.io.FileNotFoundException;
 import java.time.format.DateTimeFormatter;
