@@ -5,11 +5,12 @@ import java.util.List;
 
 public class Curso extends Formacion{
     private int costo;
-    private List<Diplomado> diplomados = new ArrayList<Diplomado>();
+    private List<Diplomado> diplomados;
 
     public Curso(int codigo, String nombre, int costo) {
         super(codigo, nombre);
         this.costo = costo;
+        diplomados = new ArrayList<>();
     }
 
     public void setCosto(int costo) {
@@ -26,6 +27,9 @@ public class Curso extends Formacion{
     }
 
     public boolean addDiplomado(Diplomado diplomado){
+        if(diplomados.contains(diplomado)){
+            return false;
+        }
         return diplomados.add(diplomado);
     }
 }

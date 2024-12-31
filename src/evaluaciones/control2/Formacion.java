@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Formacion {
-
     private int codigo;
     private String nombre;
-    private List<Persona> personas = new ArrayList<>();
+    private List<Persona> personas;
 
     public Formacion(int codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
+        this.personas = new ArrayList<>();
     }
 
     public int getCodigo() {
@@ -30,21 +30,22 @@ public abstract class Formacion {
 
     @Override
     public boolean equals(Object otro){
-        return this.codigo == ((Formacion)otro).getCodigo();
+        if(otro instanceof Formacion){
+            return this.codigo == ((Formacion)otro).getCodigo();
+        }
+        return false;
     }
 
     public abstract String getTipo();
 
     public boolean addPersona(Persona persona){
+        if(this.personas.contains(persona)){
+            return false;
+        }
         return personas.add(persona);
     }
 
     public Persona[] getPersonas(){
-        Persona[] personasArray = new Persona[personas.size()];
-
-        if (personasArray.length > 0){
-            return personas.toArray(personasArray);
-        }
-        return new Persona[0];
+        return personas.toArray(new Persona[0]);
     }
 }

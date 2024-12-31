@@ -125,11 +125,9 @@ public class SistemaMatriculas {
     }
 
     public String[][] listaFormacionesDePersona(String rut) {
-        // Declaración del arreglo de salida
         String[][] listaFormaciones = new String[0][0];
         Formacion[] formacionL = null;
 
-        // Buscar la persona por su RUT
         for (Persona persona : personas) {
             if (persona.getRut().equals(rut)) {
                 formacionL = persona.getFormaciones();
@@ -137,15 +135,12 @@ public class SistemaMatriculas {
             }
         }
 
-        // Validar si no se encontró la persona o no tiene formaciones
         if (formacionL == null || formacionL.length == 0) {
             return listaFormaciones; // Devolver arreglo vacío
         }
 
-        // Inicializar el arreglo de salida con el tamaño correcto
         listaFormaciones = new String[formacionL.length][4];
 
-        // Llenar los datos de formaciones
         for (int i = 0; i < formacionL.length; i++) {
             Formacion formacion = formacionL[i];
 
@@ -153,7 +148,6 @@ public class SistemaMatriculas {
             listaFormaciones[i][1] = formacion.getNombre();
             listaFormaciones[i][2] = formacion.getTipo();
 
-            // Determinar el costo o mensaje especial
             if (formacion instanceof Diplomado) {
                 listaFormaciones[i][3] = "Sin costo";
             } else {

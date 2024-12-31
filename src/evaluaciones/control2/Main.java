@@ -12,28 +12,26 @@ public class Main {
         main.menu();
     }
 
-    private void menu(){
-
+    private void menu() {
         int opcion;
 
-        do{
+        do {
             System.out.println("""
-                -----Menu-----
-                
-                1) Crea ejercicios.persistencia.persona.Persona
-                2) Crea Formacion
-                3) Matricula ejercicios.persistencia.persona.Persona
-                4) Agrega curso a dip.
-                5) Lista personas de formacion
-                6) Lista formaciones de persona.
-                
-                7) Salir
-                """);
+                    \n-----Menu principal-----
+                    
+                    1) Crea persona
+                    2) Crea formación
+                    3) Matricula persona
+                    4) Agrega curso a dip.
+                    5) Lista personas de formación
+                    6) Lista formaciones de persona.
+                    7) Salir
+                    """);
 
             System.out.print("Introduzca una opcion: ");
             opcion = scan.nextInt();
 
-            switch (opcion){
+            switch (opcion) {
                 case 1 -> creaPersona();
                 case 2 -> creaFormacion();
                 case 3 -> matriculaPersona();
@@ -41,38 +39,38 @@ public class Main {
                 case 5 -> listaPersonasDeFormacion();
                 case 6 -> listaFormacionesDePersonas();
                 case 7 -> System.out.print("Saliendo...");
-                default -> System.out.print("Error!");
+                default -> System.out.print("Error, Ingrese datos validos!\n");
             }
-        }while(opcion != 7);
+        } while (opcion != 7);
     }
 
-    private void creaPersona(){
+    private void creaPersona() {
         System.out.print("Ingrese rut: ");
         String rut = scan.next();
         System.out.print("Ingrese nombre: ");
         String nombre = scan.next();
 
-        if(sistema.creaPersona(rut, nombre)){
-            System.out.println("ejercicios.persistencia.persona.Persona con exito");
-        }else{
-            System.out.println("ejercicios.persistencia.persona.Persona Error!");
+        if (sistema.creaPersona(rut, nombre)) {
+            System.out.println("Persona creada con exito");
+        } else {
+            System.out.println("Error al crear persona!");
         }
     }
 
-    private void creaFormacion(){
+    private void creaFormacion() {
         System.out.print("Diplomado[1] o Curso[2]: ");
         int opcion = scan.nextInt();
 
-        switch (opcion){
+        switch (opcion) {
             case 1:
                 System.out.print("Ingrese nombre: ");
                 String nombre = scan.next();
                 System.out.print("Ingrese codigo: ");
                 int codigo = scan.nextInt();
 
-                if(sistema.creaDiplomado(codigo, nombre)){
+                if (sistema.creaDiplomado(codigo, nombre)) {
                     System.out.println("Formacion con exito");
-                }else{
+                } else {
                     System.out.println("Formacion Error!");
                 }
                 break;
@@ -84,9 +82,9 @@ public class Main {
                 System.out.print("Ingrese costo: ");
                 int costo2 = scan.nextInt();
 
-                if(sistema.creaCurso(codigo2, nombre2, costo2)){
+                if (sistema.creaCurso(codigo2, nombre2, costo2)) {
                     System.out.println("Formacion con exito");
-                }else{
+                } else {
                     System.out.println("Formacion Error!");
                 }
                 break;
@@ -96,56 +94,78 @@ public class Main {
 
     }
 
-    private void matriculaPersona(){
+    private void matriculaPersona() {
         System.out.print("Ingrese rut persona: ");
         String rut = scan.next();
         System.out.print("Ingrese codigo formacion: ");
         int codigoFormacion = scan.nextInt();
 
-        if(sistema.matriculaPersona(rut,codigoFormacion)){
+        if (sistema.matriculaPersona(rut, codigoFormacion)) {
             System.out.println("Operacion con exito");
-        }else{
+        } else {
             System.out.println("Operacion Error!");
         }
     }
 
-    private void agregaCursoADiplomado(){
+    private void agregaCursoADiplomado() {
         System.out.print("Ingrese codigo curso: ");
         int codigoCurso = scan.nextInt();
         System.out.print("Ingrese codigo dip. :");
         int codigoDip = scan.nextInt();
 
-        if(sistema.agregaCursoADiplomado(codigoCurso,codigoDip)){
+        if (sistema.agregaCursoADiplomado(codigoCurso, codigoDip)) {
             System.out.println("Operacion con exito");
-        }else{
+        } else {
             System.out.println("Operacion Error!");
         }
     }
 
-    private void listaPersonasDeFormacion(){
+    private void listaPersonasDeFormacion() {
         System.out.print("Ingrese codigo de programa de formacion: ");
         int codigoFormacion = scan.nextInt();
 
         String[][] listaP = sistema.listaPersonasDeFormacion(codigoFormacion);
+        String nombre = sistema.getNombreFormacion(codigoFormacion);
+
+        if (listaP.length == 0) {
+            System.out.println("No se encontro el programa de formacion, o no existen datos");
+            return;
+        }
+
+        System.out.println("Listado Personas de programa de formación '" + nombre.toUpperCase() + "'");
+        System.out.printf("%-14s %-10s \n", "Rut", "Nombre");
 
         for (String[] strings : listaP) {
-            System.out.printf("%10s | %10s \n", strings[0], strings[1]);
+            System.out.printf("%-14s %-10s \n", strings[0], strings[1]);
         }
+
+        System.out.println("Numero total de estudiantes matriculados: " + listaP.length);
     }
 
-    private void listaFormacionesDePersonas(){
+    private void listaFormacionesDePersonas() {
+        double valorTotal = 0;
+
         System.out.print("Ingrese rut de persona: ");
         String rutPersona = scan.next();
 
         String[][] listaF = sistema.listaFormacionesDePersona(rutPersona);
 
-        if(listaF == null){
-            System.out.println("Error! Lista nula!");
+        if (listaF.length == 0) {
+            System.out.println("No se encontro la persona, o no existen datos");
             return;
         }
 
+        System.out.println("Listado Programa de Formación de Persona '" + sistema.getNombrePersona(rutPersona) + "'");
+
+        System.out.printf("%-10s %-15s %-10s %-10s \n","Codigo","Nombre","Tipo","Costo($)");
         for (String[] strings : listaF) {
-            System.out.printf("%10s | %10s | %10s | %10s \n", strings[0], strings[1], strings[2], strings[3]);
+            System.out.printf("%-10s %-15s %-10s %-10s \n", strings[0], strings[1], strings[2], strings[3]);
+
+            if(!strings[3].equalsIgnoreCase("sin costo")){
+                valorTotal += Double.parseDouble(strings[3]);
+            }
         }
+
+        System.out.println("Monto total programas: $" + valorTotal);
     }
 }

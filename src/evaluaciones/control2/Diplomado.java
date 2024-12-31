@@ -12,6 +12,7 @@ public class Diplomado extends Formacion{
     }
 
     public int getCosto(){
+
         int contadorValor = 0;
         for(Curso curso : cursos){
             contadorValor += curso.getCosto();
@@ -25,7 +26,12 @@ public class Diplomado extends Formacion{
     }
 
     public boolean addCurso(Curso curso){
-        curso.addDiplomado(this);
+        if(cursos.contains(curso)){
+            return false;
+        }
+        if(!curso.addDiplomado(this)){
+            return false;
+        }
         return cursos.add(curso);
     }
 }
