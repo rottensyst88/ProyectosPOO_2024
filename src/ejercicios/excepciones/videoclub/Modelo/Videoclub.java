@@ -1,4 +1,4 @@
-package ejercicios.excepciones.b.Modelo;
+package ejercicios.excepciones.videoclub.Modelo;
 
 import java.util.ArrayList;
 import java.util.List;

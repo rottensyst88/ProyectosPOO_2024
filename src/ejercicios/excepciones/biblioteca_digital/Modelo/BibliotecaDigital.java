@@ -1,4 +1,4 @@
-package ejercicios.excepciones.c.Modelo;
+package ejercicios.excepciones.biblioteca_digital.Modelo;
 
 import java.util.ArrayList;
 import java.util.List;

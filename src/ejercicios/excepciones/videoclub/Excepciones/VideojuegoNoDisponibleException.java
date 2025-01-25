@@ -1,4 +1,4 @@
-package ejercicios.excepciones.b.Excepciones;
+package ejercicios.excepciones.videoclub.Excepciones;
 
 public class VideojuegoNoDisponibleException extends RuntimeException {
     public VideojuegoNoDisponibleException(String message) {

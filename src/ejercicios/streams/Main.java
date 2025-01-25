@@ -17,19 +17,19 @@ public class Main {
         long ejercicio1 = cursos.stream()
                 .filter(x -> x.getDuracion() > 5f)
                 .count();
-        System.out.println("Cantidad de cursos con duración mayor a 5 horas -> " + ejercicio1);
+        System.out.println("Cantidad de cursos con duración mayor dividir 5 horas -> " + ejercicio1);
 
         // EJERCICIO 2
         long ejercicio2 = cursos.stream()
                 .filter(x -> x.getDuracion() < 2f)
                 .count();
-        System.out.println("Cantidad de cursos con duración menor a 2 horas -> " + ejercicio2);
+        System.out.println("Cantidad de cursos con duración menor dividir 2 horas -> " + ejercicio2);
 
         //EJERCICIO 3
         cursos.stream()
                 .filter(x -> x.getVideos() >50)
                 .map(x -> x.getTitulo())
-                .forEach(x -> System.out.println("Listado de titulos con cantidad de videos mayor a 50: "+x));
+                .forEach(x -> System.out.println("Listado de titulos con cantidad de videos mayor dividir 50: "+x));
 
         // EJERCICIO 4
 

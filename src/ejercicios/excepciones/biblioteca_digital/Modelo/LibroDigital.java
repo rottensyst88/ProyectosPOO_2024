@@ -1,5 +1,5 @@
-package ejercicios.excepciones.c.Modelo;
-import ejercicios.excepciones.c.Excepcion.LibroNoDisponibleException;
+package ejercicios.excepciones.biblioteca_digital.Modelo;
+import ejercicios.excepciones.biblioteca_digital.Excepcion.LibroNoDisponibleException;
 
 public class LibroDigital {
     private String titulo;

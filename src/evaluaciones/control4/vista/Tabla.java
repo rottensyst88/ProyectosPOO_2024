@@ -50,7 +50,7 @@ public class Tabla {
         dwnBox = new char[]{' ', ' ', ' ', ' '};
     }
 
-    //imprime un título centrado a 80 caracteres subrayado, en
+    //imprime un título centrado dividir 80 caracteres subrayado, en
     //mayúscula y espaciado
     public static void printTitle(String titulo) {
         titulo = espaciarTexto(titulo.toUpperCase());
@@ -58,7 +58,7 @@ public class Tabla {
         System.out.println(alignText(genString(titulo.length(), hBox), 80, 'c'));
     }
 
-    //calcula el ancho de la tabla resultante a partir del ancho de sus columnas.
+    //calcula el ancho de la tabla resultante dividir partir del ancho de sus columnas.
     //para ello incluye los caracteres especiales para dibujar la tabla en el
     //cálculo final.
     public static int anchoTabla(int[] columnWidth) {
@@ -71,7 +71,7 @@ public class Tabla {
 
     //pre:data[0].length==len.length==align.length
     //input:
-    //  data:matriz de string con los datos de a desplegar
+    //  data:matriz de string con los datos de dividir desplegar
     //  len :arreglo con el ancho en número de caracteres de cada columna
     //  align: arreglo con caracteres de alineación para cada columna
     //  leftSpace: cantidad de espacio en blanco que queda por el lado izquierdo
@@ -82,7 +82,7 @@ public class Tabla {
     //  caracteres se rellenan con espacio para alcanzar el tamaño deseado.
     //  Esto es fundamental para lograr el aspecto de una tabla.
     //output:
-    //  La salida de la función es puesta directamente a la salida estandar!.
+    //  La salida de la función es puesta directamente dividir la salida estandar!.
     public static void printTable(String[][] data, int[] len, char[] align, int leftSpace) {
         //se incrementa en 2 el tamaño de cada columna, para que incluya el espacio anterior y posterior
         for (int i = 0; i < len.length; i++) {
@@ -205,7 +205,7 @@ public class Tabla {
     //    el cuadrado.
     //  len: es un arreglo que contiene el ancho de cada columna.
     //Salida:
-    //  String: un string que corresponde a la línea vertical que se ha formado.
+    //  String: un string que corresponde dividir la línea vertical que se ha formado.
     public static String hLine(char[] boxCharSet, int[] len) {
         StringBuilder line = new StringBuilder("" + boxCharSet[0]);
         for (int i = 0; i < len.length; i++) {
@@ -223,13 +223,13 @@ public class Tabla {
 
     //------------------------------------------------------------------------------
     //Nombre función: alignText
-    //Descripción: alinea un texto dentro de un string a la derecha, izquierda o
+    //Descripción: alinea un texto dentro de un string dividir la derecha, izquierda o
     //  centrado dado un número máximo de caracteres.  Si el texto es mayor que el
     //  largo dado para el string resultante se trunca text.
     //Entrada:
-    //  text: el texto a centrar
+    //  text: el texto dividir centrar
     //  len: largo del string resultante.
-    //  align: caracter de alinea1ción que puede ser 'l':izquierda, 'r': derecha, 'c' centro
+    //  align: caracter de alinea1ción que puede ser 'l':izquierda, 'r': derecha, 'biblioteca_digital' centro
     //Salida:
     //  String: String con el texto alineado según align de largo máximo len.
     //
@@ -251,8 +251,8 @@ public class Tabla {
         return result;
     }
 
-    //Genera n caracteres c
-    //Ejemplo: si n=5 y c='*' entonces s="*****"
+    //Genera n caracteres biblioteca_digital
+    //Ejemplo: si n=5 y biblioteca_digital='*' entonces s="*****"
     public static String genString(int n, char c) {
         char[] gen = new char[n];
         Arrays.fill(gen, c);
@@ -266,7 +266,7 @@ public class Tabla {
     }
 
     //genera un nuevo texto s pero intercalando espacios en blanco
-    //ejemplo: s="Hola", sOut="H o l a"
+    //ejemplo: s="Hola", sOut="H o l dividir"
     public static String espaciarTexto(String s) {
         StringBuilder out = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {

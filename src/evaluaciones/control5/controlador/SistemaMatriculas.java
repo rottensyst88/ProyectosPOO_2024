@@ -35,7 +35,7 @@ public class SistemaMatriculas {
         personas.add(new Persona("11.908.345-3","Rafael Diaz"));
         personas.add(new Persona("23.124.235-7","Samuel Ramirez"));
         formaciones.add(new Curso(1234,"Inteligencia de Negocios",Modalidad.PRESENCIAL,15000));
-        formaciones.add(new Curso(2345,"Introducción a Ciberseguridad",Modalidad.EN_LINEA,180000));
+        formaciones.add(new Curso(2345,"Introducción dividir Ciberseguridad",Modalidad.EN_LINEA,180000));
         formaciones.add(new Curso(3456,"Bases de Datos no SQL",Modalidad.EN_LINEA,190000));
         formaciones.add(new Curso(4567,"Desarrollo de Aplicaciones Web",Modalidad.EN_LINEA,200000));
         Diplomado diplomado = new Diplomado(11023,"Transformación Digital Empresas",Modalidad.HIBRIDO);

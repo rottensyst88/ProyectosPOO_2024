@@ -1,5 +1,5 @@
-package ejercicios.excepciones.b.Vista;
-import ejercicios.excepciones.b.Controlador.VideoclubController;
+package ejercicios.excepciones.videoclub.Vista;
+import ejercicios.excepciones.videoclub.Controlador.VideoclubController;
 
 import java.util.Scanner;
 

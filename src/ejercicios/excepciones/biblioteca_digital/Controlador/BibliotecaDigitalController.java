@@ -1,8 +1,8 @@
-package ejercicios.excepciones.c.Controlador;
+package ejercicios.excepciones.biblioteca_digital.Controlador;
 
-import ejercicios.excepciones.c.Excepcion.LibroNoDisponibleException;
-import ejercicios.excepciones.c.Modelo.BibliotecaDigital;
-import ejercicios.excepciones.c.Modelo.LibroDigital;
+import ejercicios.excepciones.biblioteca_digital.Excepcion.LibroNoDisponibleException;
+import ejercicios.excepciones.biblioteca_digital.Modelo.BibliotecaDigital;
+import ejercicios.excepciones.biblioteca_digital.Modelo.LibroDigital;
 
 public class BibliotecaDigitalController {
     private static final BibliotecaDigitalController instancia = new BibliotecaDigitalController();

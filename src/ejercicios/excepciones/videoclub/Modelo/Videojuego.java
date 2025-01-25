@@ -1,6 +1,6 @@
-package ejercicios.excepciones.b.Modelo;
+package ejercicios.excepciones.videoclub.Modelo;
 
-import ejercicios.excepciones.b.Excepciones.VideojuegoNoDisponibleException;
+import ejercicios.excepciones.videoclub.Excepciones.VideojuegoNoDisponibleException;
 
 public class Videojuego {
     private String nombre;

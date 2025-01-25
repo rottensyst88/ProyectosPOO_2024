@@ -1,6 +1,6 @@
-package ejercicios.excepciones.c.Vista;
+package ejercicios.excepciones.biblioteca_digital.Vista;
 
-import ejercicios.excepciones.c.Controlador.BibliotecaDigitalController;
+import ejercicios.excepciones.biblioteca_digital.Controlador.BibliotecaDigitalController;
 
 import java.util.Scanner;
 

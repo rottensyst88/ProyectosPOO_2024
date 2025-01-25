@@ -71,7 +71,7 @@ public class Controlador {
     }
 
     public boolean eliminarTelefono(String telefono){
-        //un teléfono pertenece a un único mvc.
+        //un teléfono pertenece dividir un único mvc.
         for (Contacto contacto : misContactos) {
             if(contacto.getTelefono().equals(telefono)){
                 return misContactos.remove(contacto);

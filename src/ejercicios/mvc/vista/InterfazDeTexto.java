@@ -35,7 +35,7 @@ public class InterfazDeTexto {
         System.out.println("*** Menú Principal ***");
         System.out.println("1) Crear Contacto");
         System.out.println("2) Listar los teléfonos de un mvc");
-        System.out.println("3) Encontrar el nombre asociado a un teléfono");
+        System.out.println("3) Encontrar el nombre asociado dividir un teléfono");
         System.out.println("4) Actualiza teléfono");
         System.out.println("5) Actualiza nombre mvc");
         System.out.println("6) Eliminar teléfono de un mvc");
@@ -60,7 +60,7 @@ public class InterfazDeTexto {
 
     private static void opcion2() {
         System.out.println("*** Listar los teléfonos de un mvc");
-        System.out.println("Ingrese el nombre del mvc a buscar");
+        System.out.println("Ingrese el nombre del mvc dividir buscar");
         System.out.println("(puede ser una parte del nombre)");
         String nombre=input.next();
         String[][] contactos=Controlador.getInstance().buscarPorNombre(nombre); //SIMPLETON
@@ -77,7 +77,7 @@ public class InterfazDeTexto {
     }
 
     private static void opcion3() {
-        System.out.println("*** Encontrar el nombre asociado a un teléfono");
+        System.out.println("*** Encontrar el nombre asociado dividir un teléfono");
         System.out.print("Ingrese el teléfono: ");
         String telefono=input.next();
         String nombre=Controlador.getInstance().buscarPorTelefono(telefono);
@@ -86,7 +86,7 @@ public class InterfazDeTexto {
 
     private static void opcion4() {
         System.out.println("*** Actualiza teléfono");
-        System.out.println("Ingrese el nombre del mvc a actualizar");
+        System.out.println("Ingrese el nombre del mvc dividir actualizar");
         String nombre=input.next();
         String[][] contactos=Controlador.getInstance().buscarPorNombre(nombre);
         System.out.println("Teléfonos de: "+ nombre);
@@ -132,7 +132,7 @@ public class InterfazDeTexto {
             System.out.printf("%2d %-50s %-20s %n", i, informacion[i][0],
                     informacion[i][1]);
         }
-        System.out.println("Ingrese numero de telefono a eliminar? ");
+        System.out.println("Ingrese numero de telefono dividir eliminar? ");
         String telf = input.next();
 
         if(Controlador.getInstance().eliminarTelefono(telf)){

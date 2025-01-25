@@ -1,8 +1,8 @@
-package ejercicios.excepciones.b.Controlador;
+package ejercicios.excepciones.videoclub.Controlador;
 
-import ejercicios.excepciones.b.Excepciones.VideojuegoNoDisponibleException;
-import ejercicios.excepciones.b.Modelo.Videoclub;
-import ejercicios.excepciones.b.Modelo.Videojuego;
+import ejercicios.excepciones.videoclub.Excepciones.VideojuegoNoDisponibleException;
+import ejercicios.excepciones.videoclub.Modelo.Videoclub;
+import ejercicios.excepciones.videoclub.Modelo.Videojuego;
 
 public class VideoclubController {
     private Videoclub videoclub;
