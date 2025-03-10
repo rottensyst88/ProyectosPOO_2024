@@ -53,10 +53,15 @@ public class ControlSelloDisco {
             }
         }
 
-        albumBusqueda.get().addCancion(cancionBusqueda.get());
+        Album album = albumBusqueda.get();
+        Cancion cancion = cancionBusqueda.get();
+
+        album.addCancion(cancion);
     }
 
     public void eliminaCancionDeAlbum(String nombreCancion, String nombreAlbum){
+        boolean centinela = true;
+
         Optional<Cancion> cancionBusqueda = buscaCancion(nombreCancion);
         Optional<Album> albumBusqueda = buscaAlbum(nombreAlbum);
 
@@ -67,22 +72,33 @@ public class ControlSelloDisco {
         Cancion[] cancions = albumBusqueda.get().getCanciones();
 
         for(Cancion cancion : cancions){
-            if(!cancion.getNombre().equals(nombreCancion)){
-                throw new SelloDiscoExcepcion("La cancion nunca estuvo en Album");
+            if(cancion.getNombre().equals(nombreCancion)){
+                centinela = false;
             }
         }
 
-        albumBusqueda.get().removeCancion(cancionBusqueda.get());
+        if(centinela){
+            throw new SelloDiscoExcepcion("La cancion nunca estuvo en Album");
+        }else{
+            albumBusqueda.get().removeCancion(cancionBusqueda.get());
+        }
     }
 
     public String[] listaAlbumes(){
         String[] albums = new String[albumes.size()];
 
         for (int i = 0; i < albumes.size(); i++) {
+
             Album album = albumes.get(i);
+            //System.out.println("DEBUG: ALBUM ENCONTRADO: " + album.getNombre());
             albums[i] = album.toString() + ";" + album.getDuracion() + ";" + album.getCanciones().length;
         }
-        return new String[0];
+
+        if(albums.length == 0){
+            return new String[0];
+        }else{
+            return albums;
+        }
     }
 
     public String[] listaCancionesDeGenero(Genero genero){

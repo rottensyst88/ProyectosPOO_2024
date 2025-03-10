@@ -22,19 +22,19 @@ public class UISelloDisco {
 
         do {
             System.out.println("""
-                    ===== MENU =====
-                    1) CREAR ALBUM
-                    2) CREAR CANCION
-                    3) AGREGA CANCION A ALBUM
-                    4) ELIMINA CANCION DE ALBUM
-                    5) LISTAR ALBUMES
-                    6) LISTAR CANCIONES DE UN GENERO
-                    7) LISTAR CANCIONES DE ALBUM
                     
-                    8) SALIR
+                    =====[ Menú Principal] =====
+                    1) Crear Álbum
+                    2) Crear Canción
+                    3) Agregar canción a álbum
+                    4) Eliminar canción de álbum
+                    5) Listar todos los álbumnes
+                    6) Listar canciones de un género
+                    7) Listar canciones de un álbum
+                    8) Salir
                     """);
 
-            System.out.print("Seleccione: ");
+            System.out.print("? ");
             opcion = scan.nextInt();
 
             switch (opcion) {
@@ -47,90 +47,77 @@ public class UISelloDisco {
                 case 7 -> listaCancionesDeAlbum();
                 case 8 -> System.out.println("Saliendo....");
             }
-
         } while (opcion != 8);
     }
 
     private void creaAlbum() {
-        System.out.print("ingrese nombre: ");
+        System.out.print("Ingrese nombre? ");
         String nombre = scan.next();
 
-        System.out.print("ingrese fecha: ");
+        System.out.print("Ingrese fecha? ");
         String fecha = scan.next();
         LocalDate fecha_c = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
         try {
             ControlSelloDisco.getInstance().creaAlbum(nombre, fecha_c);
-            System.out.println("Album creada con exito");
+            System.out.println("[ÉXITO] Álbum creado exitosamente.");
         } catch (SelloDiscoExcepcion e) {
-            System.out.println(e.getMessage());
-            System.out.println("Error!");
+            System.out.println("[ERROR] " + e.getMessage() + ".");
         }
-
     }
 
     private void creaCancion() {
         Genero gen = Genero.ROCK;
 
-        System.out.println("ingrese nombre: ");
+        System.out.print("Ingrese nombre? ");
         String nombre = scan.next();
 
-        System.out.print("ingrese duracion: ");
+        System.out.print("Ingrese duración? ");
         float duracion = scan.nextFloat();
 
-        System.out.print("ingrese genero: ");
+        System.out.print("Ingrese género? ");
         String genero = scan.next();
 
-        if (genero.equals("ROCK")) {
-            gen = Genero.ROCK;
-        }
-        if (genero.equals("NEW_AGE")) {
-            gen = Genero.NEW_AGE;
-        }
-        if (genero.equals("POP")) {
-            gen = Genero.POP;
-        }
+        gen = selectorGeneros(genero);
 
-        System.out.print("ingrese nombre del interprete: ");
+        System.out.print("Ingrese nombre del intérprete? ");
         String interprete = scan.next();
 
         try {
             ControlSelloDisco.getInstance().creaCancion(nombre, duracion, gen, interprete);
+            System.out.println("[ÉXITO] Canción creada exitosamente.");
         } catch (SelloDiscoExcepcion e) {
-            System.out.println(e.getMessage());
-            System.out.println("Error!");
+            System.out.println("[ERROR] " + e.getMessage() + ".");
         }
     }
 
     private void agregaCancionEnAlbum() {
-        System.out.print("Ingrese nombre de cancion: ");
+        System.out.print("Ingrese nombre de canción? ");
         String nombre = scan.next();
 
-        System.out.print("Ingrese nombre de album: ");
+        System.out.print("Ingrese nombre de álbum? ");
         String nombreAlbum = scan.next();
 
         try {
             ControlSelloDisco.getInstance().agregaCancionEnAlbum(nombre, nombreAlbum);
-            System.out.println("Album agregado");
+            System.out.println("[ÉXITO] Canción agregada a Album.");
         } catch (SelloDiscoExcepcion e) {
-            System.out.println(e.getMessage());
-            System.out.println("Error!");
+            System.out.println("[ERROR] " + e.getMessage() + ".");
         }
     }
 
     private void eliminaCancionDeAlbum() {
-        System.out.print("Ingrese nombre de cancion: ");
+        System.out.print("Ingrese nombre de canción? ");
         String nombre = scan.next();
 
-        System.out.print("Ingrese nombre de album: ");
+        System.out.print("Ingrese nombre de álbum? ");
         String nombreAlbum = scan.next();
 
         try {
             ControlSelloDisco.getInstance().eliminaCancionDeAlbum(nombre, nombreAlbum);
-            System.out.println("Album eliminado");
+            System.out.println("[ÉXITO] Canción eliminada de álbum.");
         } catch (SelloDiscoExcepcion e) {
-            System.out.println(e.getMessage());
-            System.out.println("Error!");
+            System.out.println("[ERROR] " + e.getMessage() + ".");
         }
     }
 
@@ -138,11 +125,12 @@ public class UISelloDisco {
         String[] lista = ControlSelloDisco.getInstance().listaAlbumes();
 
         if (lista.length == 0){
-            System.out.println("No existe un album");
+            System.out.println("[ERROR] No existen albumes. ¿Creó alguno?.");
             return;
         }
 
-        System.out.printf("| %10s | %10s | %10s | %10s |\n", "Nombre", "Fec. Crea.", "Duracion", "N° canc.");
+        System.out.println("Información sobre álbumes creados.");
+        System.out.printf("| %10s | %10s | %10s | %10s |\n", "Nombre", "Fec. Crea.", "Duración", "N° canc.");
         for(String val : lista){
             String[] data = val.split(";");
             System.out.printf("| %10s | %10s | %10s | %10s |\n", data[0], data[1], data[2], data[3]);
@@ -151,23 +139,19 @@ public class UISelloDisco {
     }
 
     private void listaCancionesDeGenero() {
-        Genero gen = Genero.ROCK;
-
-        System.out.print("ingrese genero: ");
+        System.out.print("Ingrese género? ");
         String genero = scan.next();
-
-        if (genero.equals("ROCK")) {
-            gen = Genero.ROCK;
-        }
-        if (genero.equals("NEW_AGE")) {
-            gen = Genero.NEW_AGE;
-        }
-        if (genero.equals("POP")) {
-            gen = Genero.POP;
-        }
+        Genero gen = selectorGeneros(genero);
 
         String[] lista = ControlSelloDisco.getInstance().listaCancionesDeGenero(gen);
 
+        if(lista.length == 0){
+            System.out.println("[ERROR] No se encontraron canciones que concuerden con el geńero.\n" +
+                    "¿Revisó lo que escribió?");
+            return;
+        }
+
+        System.out.println("Información sobre canciones del género '"+genero+"'.");
         //System.out.printf("")
     }
 
@@ -175,4 +159,14 @@ public class UISelloDisco {
 
     }
 
+    private Genero selectorGeneros(String entradaUsuario){
+        String[] generos = {"POP","ROCK","NEW_AGE"};
+
+        for(String generoString : generos) {
+            if(generoString.equals(entradaUsuario)){
+                return Genero.valueOf(entradaUsuario);
+            }
+        }
+        return null;
+    }
 }
