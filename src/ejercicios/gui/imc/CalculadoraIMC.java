@@ -9,10 +9,7 @@ public class CalculadoraIMC extends JDialog {
     private JButton buttonCancel;
     private JTextField pesoTextField;
     private JTextField estaturaTextField;
-    private JRadioButton hombreRadioButton;
-    private JRadioButton mujerRadioButton;
     private JLabel tituloLabel;
-    private JLabel sexoLabel;
     private JLabel pesoLabel;
     private JLabel estaturaLabel;
     private JLabel resultadoLabel;

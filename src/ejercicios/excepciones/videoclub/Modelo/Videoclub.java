@@ -18,8 +18,21 @@ public class Videoclub {
         return instancia;
     }
 
-    public void agregarVideojuego(Videojuego videojuego){
-        videojuegos.add(videojuego);
+    public boolean agregarVideojuego(Videojuego videojuego){
+
+        boolean centinela = false;
+
+        for(Videojuego videojuego2 : videojuegos){
+            if(videojuego2.getNombre().equals(videojuego.getNombre())){
+                centinela = true;
+                break;
+            }
+        }
+
+        if(!centinela){
+            return videojuegos.add(videojuego);
+        }
+        return false;
     }
 
     public Videojuego buscarVideojuego(String nombre){

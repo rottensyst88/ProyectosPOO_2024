@@ -1,7 +1,5 @@
 package ejercicios.excepciones.videoclub.Modelo;
 
-import ejercicios.excepciones.videoclub.Excepciones.VideojuegoNoDisponibleException;
-
 public class Videojuego {
     private String nombre;
     private boolean disponible;
@@ -19,11 +17,12 @@ public class Videojuego {
         return disponible;
     }
 
-    public void rentar() throws VideojuegoNoDisponibleException {
+    public boolean rentar() {
         if (!isDisponible()) {
-            throw new VideojuegoNoDisponibleException("El juego seleccionado no está disponible!");
+            return false;
         }
         disponible = false;
+        return true;
     }
 
     public void devolver() {

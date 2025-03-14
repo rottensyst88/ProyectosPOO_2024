@@ -11,21 +11,30 @@ public class VideoclubController {
         this.videoclub = videoclub;
     }
 
-    public void rentarVideojuego(String nombre){
+    public void rentarVideojuego(String nombre) throws VideojuegoNoDisponibleException{
         Videojuego videojuego = videoclub.buscarVideojuego(nombre);
         if(videojuego != null){
+
+            boolean disponible = videojuego.rentar();
+            if(disponible){
+                System.out.println("Se ha rentado el videojuego " + nombre);
+            }else{
+                throw new VideojuegoNoDisponibleException("El videojuego "+nombre+" ya ha sido rentado, no lo tenemos disponible!");
+            }
+
+            /*
             try{
                 videojuego.rentar();
                 System.out.println("El videojuego "+nombre+" ha sido rentado!");
             } catch (VideojuegoNoDisponibleException e) {
                 System.out.println(e.getMessage());
-            }
+            }*/
         }else{
-            System.out.println("El videojuego no existe!");
+            throw new VideojuegoNoDisponibleException("Videojuego no encontrado!");
         }
     }
 
-    public void devolverVideojuego(String nombre){
+    public void devolverVideojuego(String nombre) throws VideojuegoNoDisponibleException{
         Videojuego videojuego = videoclub.buscarVideojuego(nombre);
 
         if(videojuego != null){
@@ -33,10 +42,10 @@ public class VideoclubController {
                 videojuego.devolver();
                 System.out.println("El videojuego "+nombre+" ha sido devuelto!");
             }else{
-                System.out.println("El videojuego ya se encuentra devuelto!");
+                throw new VideojuegoNoDisponibleException("El videojuego ya se encuentra devuelto!");
             }
         }else{
-            System.out.println("El videojuego no existe!");
+            throw new VideojuegoNoDisponibleException("El videojuego no existe!");
         }
     }
 }

@@ -14,7 +14,7 @@ public class ControladorDeContactos {
 
     private ArrayList<Contacto> misContactos = new ArrayList<>();
 
-    public boolean agregarContacto(String nombre, String email, String telefono) {
+    public boolean agregarContacto(String nombre, String telefono, String email) {
         return misContactos.add(new Contacto(nombre, telefono, email));
     }
 

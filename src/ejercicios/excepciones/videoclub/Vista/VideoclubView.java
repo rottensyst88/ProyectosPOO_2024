@@ -1,5 +1,6 @@
 package ejercicios.excepciones.videoclub.Vista;
 import ejercicios.excepciones.videoclub.Controlador.VideoclubController;
+import ejercicios.excepciones.videoclub.Excepciones.VideojuegoNoDisponibleException;
 
 import java.util.Scanner;
 
@@ -39,12 +40,22 @@ public class VideoclubView {
     private void rentarJuego(VideoclubController controller, Scanner tecl) {
         System.out.print("Ingrese nombre del videojuego: ");
         String nom = tecl.next();
-        controller.rentarVideojuego(nom);
+
+        try{
+            controller.rentarVideojuego(nom);
+        } catch (VideojuegoNoDisponibleException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private void devolverJuego(VideoclubController controller, Scanner tecl) {
         System.out.print("Ingrese nombre del videojuego: ");
         String nom = tecl.next();
-        controller.devolverVideojuego(nom);
+
+        try{
+            controller.devolverVideojuego(nom);
+        } catch (VideojuegoNoDisponibleException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

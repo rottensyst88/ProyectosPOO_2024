@@ -18,7 +18,7 @@ public class EjemploTabla extends JDialog {
     public EjemploTabla() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(button1);
         // Se llena la tabla
 
         String[] nombreColumnas = {"Nombre","Telefono","Email"};
