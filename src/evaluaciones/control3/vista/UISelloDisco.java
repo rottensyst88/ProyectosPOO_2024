@@ -152,13 +152,37 @@ public class UISelloDisco {
         }
 
         System.out.println("Información sobre canciones del género '"+genero+"'.");
-        //System.out.printf("")
+
+        // TODO Revisar solución en casos de encontrar un genero igual a NULL
+
+        for (String x : lista){
+            String[] data = x.split(";");
+            System.out.printf("| %10s | %10s | %10s | %10s |\n", data[0], data[1], data[2], data[3]);
+        }
+        System.out.println();
     }
 
     private void listaCancionesDeAlbum() {
+        System.out.print("Ingrese nombre de álbum? ");
+        String nombre = scan.next();
 
+        String[] lista = ControlSelloDisco.getInstance().listaCancionesDeAlbum(nombre);
+
+        if(lista.length == 0){
+            System.out.println("[ERROR] No se encontraron canciones, o álbum no existe");
+        }
+
+        System.out.println("Información sobre canciones del álbum '"+nombre+"'.");
+
+        for (String x : lista){
+            String[] data = x.split(";");
+            System.out.printf("| %10s | %10s | %10s | %10s |\n", data[0], data[1], data[2], data[3]);
+        }
+
+        System.out.println();
     }
 
+    // todo Revisar selector en caso de encontrar un genero igual a NULL
     private Genero selectorGeneros(String entradaUsuario){
         String[] generos = {"POP","ROCK","NEW_AGE"};
 

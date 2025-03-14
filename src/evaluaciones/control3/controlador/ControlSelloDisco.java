@@ -101,6 +101,8 @@ public class ControlSelloDisco {
         }
     }
 
+
+    //todo Revisar el sistema de separación usando ;
     public String[] listaCancionesDeGenero(Genero genero){
         List<Cancion> songs = new ArrayList<>();
 
@@ -120,7 +122,7 @@ public class ControlSelloDisco {
             Cancion cancion = songs.get(i);
 
             String[] x = cancion.toString().split(";");
-            songsArray[i] = x[0] + x[1] + x[3] + cancion.getAlbumes().length;
+            songsArray[i] = x[0] + ";"+x[1] +";"+ x[3] +";"+ cancion.getAlbumes().length;
         }
 
         return songsArray;
