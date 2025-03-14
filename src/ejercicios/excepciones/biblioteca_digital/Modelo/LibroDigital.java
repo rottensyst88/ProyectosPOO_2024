@@ -1,7 +1,7 @@
 package ejercicios.excepciones.biblioteca_digital.Modelo;
 import ejercicios.excepciones.biblioteca_digital.Excepcion.LibroNoDisponibleException;
 
-public class LibroDigital {
+public class LibroDigital{
     private String titulo;
     private String autor;
     private boolean prestado;
@@ -24,11 +24,13 @@ public class LibroDigital {
         return prestado;
     }
 
-    public void prestar() throws LibroNoDisponibleException {
+    public boolean prestar(){
         if (prestado){
-            throw new LibroNoDisponibleException("El libro "+titulo+ " no esta disponible");
+            return false;
+        }else{
+            prestado = true;
+            return true;
         }
-        prestado = true;
     }
 
     public void devolver(){

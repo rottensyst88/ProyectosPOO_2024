@@ -16,22 +16,31 @@ public class BibliotecaDigitalController {
         return instancia;
     }
 
-    public void prestarLibro(String titulo) {
+    public void prestarLibro(String titulo) throws LibroNoDisponibleException{
         LibroDigital libro = biblioteca.buscarLibro(titulo);
 
         if (libro != null) {
+
+            /*
             try {
                 libro.prestar();
                 System.out.println("El libro " + titulo + " ha sido prestado!");
             } catch (LibroNoDisponibleException e) {
                 System.out.println(e.getMessage());
+            }*/
+
+            boolean verif = libro.prestar();
+            if (verif) {
+                System.out.println("El libro " + titulo + " ha sido prestado!");
+            }else{
+                throw new LibroNoDisponibleException("El libro " + titulo + " no se encuentra disponible!");
             }
         } else {
-            System.out.println("El libro solicitado no existe!");
+            throw new LibroNoDisponibleException("El libro solicitado no existe!");
         }
     }
 
-    public void devolverLibro(String titulo) {
+    public void devolverLibro(String titulo) throws LibroNoDisponibleException {
         LibroDigital libro = biblioteca.buscarLibro(titulo);
 
         if(libro != null){
@@ -39,14 +48,20 @@ public class BibliotecaDigitalController {
                 libro.devolver();
                 System.out.println("El libro "+titulo+" ha sido devuelto!");
             }else{
-                System.out.println("El libro "+titulo+" no se encuentra prestado!");
+                throw new LibroNoDisponibleException("El libro "+titulo+" no se encuentra prestado!");
             }
         }else{
-            System.out.println("El libro solicitado no existe!");
+            throw new LibroNoDisponibleException("El libro "+titulo+" no existe!");
         }
     }
 
-    public void anadirLibro(String titulo, String autor){
-        biblioteca.agregarLibros(new LibroDigital(titulo,autor));
+    public void anadirLibro(String titulo, String autor) throws LibroNoDisponibleException {
+
+
+        if(biblioteca.agregarLibros(new LibroDigital(titulo,autor))){
+            System.out.println("El libro "+titulo+" ha sido agregado!");
+        }else{
+            throw new LibroNoDisponibleException("El libro "+titulo+" ya existe!");
+        }
     }
 }

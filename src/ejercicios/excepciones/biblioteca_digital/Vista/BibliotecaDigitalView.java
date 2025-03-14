@@ -1,6 +1,7 @@
 package ejercicios.excepciones.biblioteca_digital.Vista;
 
 import ejercicios.excepciones.biblioteca_digital.Controlador.BibliotecaDigitalController;
+import ejercicios.excepciones.biblioteca_digital.Excepcion.LibroNoDisponibleException;
 
 import java.util.Scanner;
 
@@ -48,13 +49,26 @@ public class BibliotecaDigitalView {
     private static void prestar(){
         System.out.print("Ingrese titulo? >> ");
         String titulo = sc.next();
-        BibliotecaDigitalController.getInstancia().prestarLibro(titulo);
+
+        try{
+            BibliotecaDigitalController.getInstancia().prestarLibro(titulo);
+            System.out.println("[OPERACIÓN EXITOSA]");
+        } catch (LibroNoDisponibleException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void devolver(){
         System.out.print("Ingrese titulo? >> ");
         String titulo = sc.next();
-        BibliotecaDigitalController.getInstancia().devolverLibro(titulo);
+
+        try{
+            BibliotecaDigitalController.getInstancia().devolverLibro(titulo);
+            System.out.println("[OPERACIÓN EXITOSA]");
+        } catch (LibroNoDisponibleException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     private static void anadir(){
@@ -63,6 +77,10 @@ public class BibliotecaDigitalView {
         System.out.print("Ingrese autor? >> ");
         String autor = sc.next();
 
-        BibliotecaDigitalController.getInstancia().anadirLibro(titulo,autor);
+        try{
+            BibliotecaDigitalController.getInstancia().anadirLibro(titulo,autor);
+        } catch (LibroNoDisponibleException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

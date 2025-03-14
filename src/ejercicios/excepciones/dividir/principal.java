@@ -10,11 +10,11 @@ public class principal {
 
         do{
             try{
-                System.out.println("Ingrese el denominador? ");
-                int den = sc.nextInt();
+                System.out.print("Ingrese el denominador? ");
+                double den = sc.nextDouble();
 
-                System.out.println("Ingrese el numerador: ");
-                int num = sc.nextInt();
+                System.out.print("Ingrese el numerador: ");
+                double num = sc.nextDouble();
 
                 System.out.println("El resultado es : " + num/den);
 
@@ -28,7 +28,7 @@ public class principal {
             }catch (Exception e){
                 System.out.println("ERROR! Error inesperado durante la ejecución del código!");
             }finally {
-                System.out.println("INTENTO DE DIVISIÓN REALIZADO!");
+                System.out.println("INTENTO DE DIVISIÓN REALIZADO!\n");
             }
 
         }while(continua);
