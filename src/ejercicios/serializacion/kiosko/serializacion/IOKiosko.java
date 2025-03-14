@@ -1,10 +1,11 @@
-package ejercicios.serializacion.serializacion;
+package ejercicios.serializacion.kiosko.serializacion;
 
-import ejercicios.serializacion.controlador.ControladorKiosko;
+import ejercicios.serializacion.kiosko.controlador.ControladorKiosko;
 
 import java.io.*;
 
 import ejercicios.serializacion.excepcion.*;
+import ejercicios.serializacion.kiosko.excepcion.KioskoExcp;
 
 public class IOKiosko implements Serializable {
     private static IOKiosko instance = new IOKiosko();
@@ -15,7 +16,7 @@ public class IOKiosko implements Serializable {
         return instance;
     }
 
-    public void escribirDatos(ControladorKiosko controladorKiosko) throws KioskoExcp{
+    public void escribirDatos(ControladorKiosko controladorKiosko) throws KioskoExcp {
         ObjectOutputStream archivo = null;
 
         try{

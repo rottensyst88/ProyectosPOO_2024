@@ -1,4 +1,4 @@
-package ejercicios.streams;
+package ejercicios.streams.ejercicioCurso;
 
 public class Curso {
 

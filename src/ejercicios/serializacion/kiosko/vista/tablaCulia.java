@@ -1,27 +1,25 @@
-package ejercicios.serializacion.vista;
+package ejercicios.serializacion.kiosko.vista;
 
-import ejercicios.serializacion.controlador.ControladorKiosko;
+import ejercicios.serializacion.kiosko.controlador.ControladorKiosko;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-public class crearCarne extends JDialog {
+public class tablaCulia extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField nombreF;
-    private JTextField PesoF;
-    private JTextField precioF;
-    private JTextField marcaF;
-    private JTextField serieF;
-    private JTextField fechaF;
+    private JTable table1;
 
-    public crearCarne() {
+    public tablaCulia() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+
+        String[] cabecera = {"Nombre","Peso","Precio","Marca","Serie","Fecha"};
+        String[][] datos = ControladorKiosko.getInstance().getCarnes();
+        table1.setModel(new DefaultTableModel(datos,cabecera));
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -52,28 +50,17 @@ public class crearCarne extends JDialog {
     }
 
     private void onOK() {
-        String nombre = nombreF.getText();
-        String peso = PesoF.getText();
-        String precio = precioF.getText();
-        String marca = marcaF.getText();
-        String serie = serieF.getText();
-        String fecha = fechaF.getText();
-
-        if(nombre.isEmpty() || peso.isEmpty() || precio.isEmpty() || marca.isEmpty() || serie.isEmpty() || fecha.isEmpty()){
-            JOptionPane.showMessageDialog(this,"Faltan datos por rellenar!");
-        }else{
-            ControladorKiosko.getInstance().agregarCarne(nombre,Double.parseDouble(peso),Double.parseDouble(precio),marca,Long.parseLong(serie),LocalDate.parse(fecha,DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-            JOptionPane.showMessageDialog(this,"Carne creada correctamente");
-            dispose();
-        }
+        // add your code here
+        dispose();
     }
 
     private void onCancel() {
+        // add your code here if necessary
         dispose();
     }
 
     public static void main(String[] args) {
-        crearCarne dialog = new crearCarne();
+        tablaCulia dialog = new tablaCulia();
         dialog.pack();
         dialog.setVisible(true);
     }

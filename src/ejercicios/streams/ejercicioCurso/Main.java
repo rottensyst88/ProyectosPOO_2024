@@ -1,4 +1,4 @@
-package ejercicios.streams;
+package ejercicios.streams.ejercicioCurso;
 import java.util.ArrayList;
 import java.util.List;
 

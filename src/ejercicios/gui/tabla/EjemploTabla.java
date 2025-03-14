@@ -69,13 +69,19 @@ public class EjemploTabla extends JDialog {
         if(nombre.isEmpty() || telefono.isEmpty() || email.isEmpty()){
             JOptionPane.showMessageDialog(this,"Error! Datos invalidos!");
         }else{
-            ControladorDeContactos.getInstance().agregarContacto(nombre,telefono,email);
-            String[] nombreColumnas = {"Nombre","Telefono","Email"};
-            String[][] datosTabla = ControladorDeContactos.getInstance().getContactos();
-            TablaDeContactos.setModel(new DefaultTableModel(datosTabla,nombreColumnas));
-            nombreField.setText("");
-            telefonoField.setText("");
-            emailField.setText("");
+            if(ControladorDeContactos.getInstance().agregarContacto(nombre, telefono, email)){
+                String[] nombreColumnas = {"Nombre","Telefono","Email"};
+                String[][] datosTabla = ControladorDeContactos.getInstance().getContactos();
+                TablaDeContactos.setModel(new DefaultTableModel(datosTabla,nombreColumnas));
+                nombreField.setText("");
+                telefonoField.setText("");
+                emailField.setText("");
+            }else{
+                JOptionPane.showMessageDialog(null,"Error! El contacto ya existe!");
+                nombreField.setText("");
+                telefonoField.setText("");
+                emailField.setText("");
+            }
         }
     }
 

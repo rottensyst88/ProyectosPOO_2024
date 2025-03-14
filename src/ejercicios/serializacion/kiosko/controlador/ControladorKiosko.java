@@ -1,7 +1,9 @@
-package ejercicios.serializacion.controlador;
-import ejercicios.serializacion.excepcion.KioskoExcp;
+package ejercicios.serializacion.kiosko.controlador;
+import ejercicios.serializacion.kiosko.excepcion.KioskoExcp;
+import ejercicios.serializacion.kiosko.modelo.Carne;
+import ejercicios.serializacion.kiosko.modelo.Leche;
 import ejercicios.serializacion.modelo.*;
-import ejercicios.serializacion.serializacion.IOKiosko;
+import ejercicios.serializacion.kiosko.serializacion.IOKiosko;
 
 import java.io.Serializable;
 import java.time.LocalDate;

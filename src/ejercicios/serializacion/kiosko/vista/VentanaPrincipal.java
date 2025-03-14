@@ -1,7 +1,7 @@
-package ejercicios.serializacion.vista;
+package ejercicios.serializacion.kiosko.vista;
 
-import ejercicios.serializacion.controlador.ControladorKiosko;
-import ejercicios.serializacion.excepcion.KioskoExcp;
+import ejercicios.serializacion.kiosko.controlador.ControladorKiosko;
+import ejercicios.serializacion.kiosko.excepcion.KioskoExcp;
 
 import javax.swing.*;
 import java.awt.event.*;

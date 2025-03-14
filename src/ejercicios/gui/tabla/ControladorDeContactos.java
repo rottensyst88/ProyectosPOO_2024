@@ -15,7 +15,20 @@ public class ControladorDeContactos {
     private ArrayList<Contacto> misContactos = new ArrayList<>();
 
     public boolean agregarContacto(String nombre, String telefono, String email) {
-        return misContactos.add(new Contacto(nombre, telefono, email));
+        boolean agregado = false;
+
+        for (Contacto contacto : misContactos) {
+            if(contacto.getNombre().equalsIgnoreCase(nombre)){
+                agregado = true;
+                break;
+            }
+        }
+
+        if(!agregado){
+            return misContactos.add(new Contacto(nombre, telefono, email));
+        }else{
+            return false;
+        }
     }
 
     public String[][] getContactos() {

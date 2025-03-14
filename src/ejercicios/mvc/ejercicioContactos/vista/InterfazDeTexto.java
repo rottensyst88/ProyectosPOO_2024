@@ -1,6 +1,8 @@
-package ejercicios.mvc.vista;
+package ejercicios.mvc.ejercicioContactos.vista;
 
 import ejercicios.mvc.controlador.*;
+import ejercicios.mvc.ejercicioContactos.controlador.Controlador;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

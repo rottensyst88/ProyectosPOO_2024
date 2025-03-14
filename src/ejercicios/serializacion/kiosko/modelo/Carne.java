@@ -1,20 +1,20 @@
-package ejercicios.serializacion.modelo;
+package ejercicios.serializacion.kiosko.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Leche implements Serializable {
+public class Carne implements Serializable{
     private String nombre;
-    private int cantidad;
+    private double pesoKilogramos;
     private double precio;
     private String marca;
     private long serie;
     private LocalDate fecha;
 
-    public Leche(String nombre, int cantidad, double precio, String marca, long serie, LocalDate fecha) {
+    public Carne(String nombre, double pesoKilogramos, double precio, String marca, long serie, LocalDate fecha) {
         this.nombre = nombre;
-        this.cantidad = cantidad;
+        this.pesoKilogramos = pesoKilogramos;
         this.precio = precio;
         this.marca = marca;
         this.serie = serie;
@@ -29,12 +29,12 @@ public class Leche implements Serializable {
         this.nombre = nombre;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public double getPesoKilogramos() {
+        return pesoKilogramos;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setPesoKilogramos(double pesoKilogramos) {
+        this.pesoKilogramos = pesoKilogramos;
     }
 
     public double getPrecio() {
@@ -71,8 +71,8 @@ public class Leche implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Leche leche)) return false;
-        return getSerie() == leche.getSerie();
+        if (!(o instanceof Carne carne)) return false;
+        return getSerie() == carne.getSerie();
     }
 
     @Override

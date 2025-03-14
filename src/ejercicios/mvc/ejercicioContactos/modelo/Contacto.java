@@ -1,4 +1,4 @@
-package ejercicios.mvc.modelo;
+package ejercicios.mvc.ejercicioContactos.modelo;
 
 import java.util.Objects;
 

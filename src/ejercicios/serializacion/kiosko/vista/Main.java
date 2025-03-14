@@ -1,4 +1,4 @@
-package ejercicios.serializacion.vista;
+package ejercicios.serializacion.kiosko.vista;
 
 public class Main {
     public static void main(String[] args) {

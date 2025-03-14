@@ -1,5 +1,6 @@
-package ejercicios.mvc.controlador;
+package ejercicios.mvc.ejercicioContactos.controlador;
 
+import ejercicios.mvc.ejercicioContactos.modelo.Contacto;
 import ejercicios.mvc.modelo.*;
 import java.util.ArrayList;
 

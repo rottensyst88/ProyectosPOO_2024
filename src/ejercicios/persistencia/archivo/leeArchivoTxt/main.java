@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        File file = new File("src/ejercicios.clase_16_sept/ejemplo1/file.txt");
+        File file = new File("src/ejercicios/persistencia/archivo/leeArchivoTxt/file.txt");
 
         try{
             Scanner sc = new Scanner(file);
